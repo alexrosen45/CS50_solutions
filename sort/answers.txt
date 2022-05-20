@@ -1,0 +1,11 @@
+sort1 uses: bubble sort
+
+How do you know?: Bubble sort is good for an almost/fully sorted list because it will have a time complexity of O(n) and for my sorted test it came first. However, in worst and average cases it will have a time complexity of O(n^2) which is why it came last in my random and reversed tests.
+
+sort2 uses: merge sort
+
+How do you know?: Sort2 beat sort3 in my random and reversed tests meaning that sort2 has a better time complexity than sort3 for average and worst cases. For both of these possible cases merge sort has a time complexity of O(nlog(n)) and selection sort has a time complexity of O(n^2). Therefore, sort2 is merge sort.
+
+sort3 uses: selection sort
+
+How do you know?: By process of elimination, and the same explanation for sort2 being merge sort, we can say that sort3 must be selection sort.
