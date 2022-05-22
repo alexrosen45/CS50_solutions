@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+
+<html lang="en">
+    <head>
+        <link href="https://fonts.googleapis.com/css2?family=Montserrat:wght@500&display=swap" rel="stylesheet">
+        <link href="styles.css" rel="stylesheet">
+        <title>Trivia!</title>
+        <script>
+            // TODO: Add code to check answers to questions
+        </script>
+    </head>
+    <body>
+        <div class="header">
+            <h1>Trivia!</h1>
+        </div>
+
+        <div class="container">
+            <div class="section">
+                <div class="btn-reset">
+                    <button id="reset">Reset</button>
+                </div>
+                <h2>Part 1: Multiple Choice </h2>
+                <hr>
+                <h3>Which is a yellow fruit?</h3>
+                <div class="btn-row">
+                    <button class="incorrect">Apples</button>
+                    <button class="incorrect">Oranges</button>
+                    <button class="correct">Bananas</button>
+                </div>
+                <h3>Which is a type of fruit?</h3>
+                <div class="btn-row">
+                    <button class="incorrect">Steak</button>
+                    <button class="correct">Pineapple</button>
+                    <button class="incorrect">Distilled water</button>
+                </div>
+                <h3>Which is bigger than the average size of a randomly selected fruit?</h3>
+                <div class="btn-row">
+                    <button class="incorrect">Red blood cell</button>
+                    <button class="incorrect">A fruit of size smaller than the average size of a randomly selected fruit</button>
+                    <button class="correct">The Earth probably</button>
+                </div>
+            </div>
+
+            <div class="section">
+                <h2>Part 2: Free Response</h2>
+                <hr>
+                <h3>What is fruit? (hint: fruit is fruit)</h3>
+                <div class="btn-submit">
+                    <input id="ans"/>
+                    <button onclick="submit()">Submit</button>
+                </div>
+                <h4 id="result"></h4>
+            </div>
+        </div>
+        <script>
+            // Part 1
+            // 'correct' and 'incorrect' button arrays with event listeners
+            const corrects = document.getElementsByClassName("correct");
+            const incorrects = document.getElementsByClassName("incorrect");
+
+            // reset button with event listener
+            const reset = document.getElementById("reset");
+
+            function ittrButtons(arr, color) {
+                for (const btn of arr) {
+                    btn.addEventListener('click', function onClick() {
+                        btn.style.backgroundColor = color;
+                    });
+                }
+            }
+
+            reset.addEventListener('click', function onClick() {
+                for (const correct of corrects)
+                    correct.style.backgroundColor = "#3EC5FE";
+                for (const incorrect of incorrects)
+                    incorrect.style.backgroundColor = "#3EC5FE";
+                document.getElementById("ans").value = "";
+                document.getElementById("result").innerHTML = "";
+                document.getElementById("ans").style.backgroundColor = 'white';
+            });
+
+            ittrButtons(corrects, 'green');
+            ittrButtons(incorrects, 'red');
+
+            // Part 2
+            function submit() {
+                if (document.getElementById("ans").value.toLowerCase() != "fruit") {
+                    document.getElementById("result").innerHTML = "Incorrect";
+                    document.getElementById("ans").style.backgroundColor = 'red';
+                } else {
+                    document.getElementById("result").innerHTML = "Correct!";
+                    document.getElementById("ans").style.backgroundColor = 'green';
+                }
+            }
+        </script>
+    </body>
+</html>
