@@ -1,0 +1,36 @@
+.navbar-brand {
+    color: lightgrey;
+    background-color: #F9F9F9;
+    padding: 10px 24px;
+    font-size: 22px;
+}
+
+.nav-item {
+    color: lightgrey;
+    background-color: #F9F9F9;
+    padding: 10px 24px;
+    cursor: pointer;
+    font-size: 22px;
+}
+
+.message {
+    display: inline-block;
+    color: grey;
+    font-size: 26px;
+    padding: 22px 34px;
+}
+
+.error-message {
+    display: inline-block;
+    color: red;
+    font-size: 26px;
+    padding: 22px 34px;
+}
+
+.counter {
+    display: inline-block;
+    background-color: #FFFFFF;
+    color: grey;
+    font-size: 26px;
+    padding: 22px 0px;
+}
